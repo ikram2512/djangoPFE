@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Images</title>
+</head>
+<body>
+    <h1>Upload Images</h1>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <label for="single-image">Choose a Single Image:</label>
+        <input type="file" name="single-image" accept="image/*">
+        <br><br>
+        
+        <label for="multiple-images">Choose Multiple Images:</label>
+        <input type="file" name="multiple-images" accept="image/*" multiple>
+        <br><br>
+        
+        <button type="submit">Upload</button>
+    </form>
+</body>
+</html>

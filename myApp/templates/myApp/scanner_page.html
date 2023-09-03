@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InvoiceScan+</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(120deg, #a0ced9, #97d5f5); /* Dégradé de bleu */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .scanner-box {
+            position: relative;
+            width: 400px;
+            padding: 100px;
+            background-color: #ffffff;
+            border: 2px solid #1282a2; /* Bleu plus foncé */
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #1282a2; /* Bleu plus foncé */
+        }
+        .scanner-menu {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .scanner-menu-button {
+            background-color: #ffffff;
+            color: #1282a2; /* Bleu plus foncé */
+            border: none;
+            cursor: pointer;
+        }
+        .scanner-menu-select {
+            display: none;
+            position: absolute;
+            top: 30px;
+            right: 0;
+            background-color: #fff;
+            border: 2px solid #1282a2; /* Bleu plus foncé */
+            border-radius: 5px;
+            z-index: 1;
+        }
+        .scanner-menu-select.active {
+            display: block;
+        }
+        .scanner-buttons {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        .scanner-button {
+            margin: 5px;
+            padding: 5px 10px;
+            background-color: #1282a2; /* Bleu plus foncé */
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .scanner-button:hover {
+            background-color: #0c537a; /* Bleu plus foncé au survol */
+        }
+        input[type="file"] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="scanner-box">
+       
+        <h1>InvoiceScan+</h1>
+        <div class="scanner-buttons">
+            <input type="file" accept="image/*" id="scanSingleInput">
+            <input type="file" accept="image/*" multiple id="scanMultipleInput">
+            <button class="scanner-button" id="scanSingleButton">Scanner un document</button>
+            <button class="scanner-button" id="scanMultipleButton">Scanner des documents</button>
+        </div>
+    </div>
+
+    <script>
+       
+        const scanSingleButton = document.getElementById('scanSingleButton');
+        const scanSingleInput = document.getElementById('scanSingleInput');
+        const scanMultipleButton = document.getElementById('scanMultipleButton');
+        const scanMultipleInput = document.getElementById('scanMultipleInput');
+
+       
+
+        scanSingleButton.addEventListener('click', () => {
+            scanSingleInput.click();
+        });
+
+        scanSingleInput.addEventListener('change', () => {
+            // Code pour gérer le fichier unique sélectionné
+            console.log(scanSingleInput.files);
+        });
+
+        scanMultipleButton.addEventListener('click', () => {
+            scanMultipleInput.click();
+        });
+
+        scanMultipleInput.addEventListener('change', () => {
+            // Code pour gérer les fichiers multiples sélectionnés
+            console.log(scanMultipleInput.files);
+        });
+    </script>
+</body>
+</html>
+
